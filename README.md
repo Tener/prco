@@ -22,14 +22,15 @@ installed for your agent.
 
 The review prompt invokes three skills, vendored in `skills/`:
 `software-risk-assessment`, `tracing-invariants` and `argument-decomposition`.
-prco does not install them. For Claude Code, link them into your user skills
-from the prco checkout:
+prco does not install them. This repo is also a Claude Code plugin
+marketplace; in Claude Code run:
 
-    mkdir -p ~/.claude/skills
-    ln -s "$PWD"/skills/* ~/.claude/skills/
+    /plugin install prco --marketplace Tener/prco
 
-For other agents, put the three directories wherever the agent loads skills
-from. Without them the agent stops before reviewing and points here.
+On Claude Code before 2.1.275, run `/plugin marketplace add Tener/prco` and
+then `/plugin install prco@prco`. For other agents, put the three
+directories wherever the agent loads skills from. Without them the agent
+stops before reviewing and points here.
 
 ## Usage
 

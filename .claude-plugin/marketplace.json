@@ -1,0 +1,8 @@
+{
+  "name": "prco",
+  "description": "Skills for prco's AI PR reviews",
+  "owner": { "name": "Tener" },
+  "plugins": [
+    { "name": "prco", "source": "./", "description": "Review skills used by prco's review prompt" }
+  ]
+}

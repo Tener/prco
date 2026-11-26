@@ -45,11 +45,15 @@ If you do not, skip this silently; it is not a step.
 Then check that the skills this methodology invokes are available
 to you: /software-risk-assessment, /tracing-invariants and
 /argument-decomposition. If any is missing, stop before step 1:
-name the missing skills, tell the user they ship with prco and
-are installed by hand as described at
-https://github.com/Tener/prco#skills, and wait for the user. Do
-not install them yourself, and do not substitute your own
-approximation of a skill.
+name the missing skills and tell the user they ship with prco
+and are installed by hand. If you are Claude Code, give the
+command
+
+    /plugin install prco --marketplace Tener/prco
+
+Otherwise point the user at https://github.com/Tener/prco#skills.
+Then wait for the user. Do not install them yourself, and do not
+substitute your own approximation of a skill.
 
 Review methodology -- follow strictly, in order. Do not skip
 steps, do not reorder, do not peek ahead. Maintain a task list

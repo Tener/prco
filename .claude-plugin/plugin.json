@@ -1,0 +1,6 @@
+{
+  "name": "prco",
+  "description": "Review skills used by prco's review prompt: software-risk assessment, invariant tracing, argument decomposition.",
+  "version": "0.1.0",
+  "author": { "name": "Tener" }
+}
