@@ -27,10 +27,8 @@ marketplace; in Claude Code run:
 
     /plugin install prco --marketplace Tener/prco
 
-On Claude Code before 2.1.275, run `/plugin marketplace add Tener/prco` and
-then `/plugin install prco@prco`. For other agents, put the three
-directories wherever the agent loads skills from. Without them the agent
-stops before reviewing and points here.
+For other agents, put the three directories wherever the agent loads skills
+from. Without them the agent stops before reviewing and points here.
 
 ## Usage
 
