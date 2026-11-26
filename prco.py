@@ -536,4 +536,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except subprocess.CalledProcessError as exc:
+        # The command has already reported its own error on stderr.
+        sys.exit(f"{e_err('error:')} {e_cyan(shlex.join(exc.cmd))} "
+                 f"failed (exit {exc.returncode})")
