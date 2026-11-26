@@ -6,6 +6,8 @@ Hand that prompt to an AI agent and you get back a self-contained HTML review
 report: findings grouped by severity, each with user impact and threat-model
 assumptions.
 
+![prco checking out a PR](demo/demo.gif)
+
     prco 66556
     cd ~/code/teleport-pr-66556 && claude "@PR_REVIEW.txt"
     # ... agent reviews, writes PR_REVIEW_REPORT.<model>.<ts>.html, opens it
@@ -23,7 +25,7 @@ assumptions.
    `cd ... && claude "@PR_REVIEW.txt"` line.
 
 `make help` lists all targets; `make uninstall` removes the symlink,
-`make test` runs the tests.
+`make test` runs the tests. `demo/record.sh` re-records the animation above.
 
 ## Usage
 
@@ -40,33 +42,6 @@ head. Fork, merged and closed PRs use upstream `refs/pull/<N>/head`. It then
 prints one start command per available agent: always `claude`, plus `codex`
 when installed, and a `prism <agent>` variant of each when `prism`'s router is
 up (routing the agent's traffic through the Teleport cluster).
-
-### Example
-
-```code
-> prco 66556
-From https://github.com/gravitational/teleport
- * branch                    refs/pull/66556/head -> FETCH_HEAD
-Preparing worktree (detached HEAD 9213e29ee29)
-Updating files: 100% (14005/14005), done.
-HEAD is now at 9213e29ee29 Merge branch 'master' into maxim/fix-auth-cert-gen-rids
-
-PR #66556: [Access Requests] Fix sentinel in legacy cert extension replacing actual resource IDs
-  worktree: /Users/tener/code/teleport-pr-66556
-  head:     maxim/fix-auth-cert-gen-rids  (detached)  (base: master)
-  info      /Users/tener/code/teleport-pr-66556/PR_INFO.txt
-  desc      /Users/tener/code/teleport-pr-66556/PR_DESCRIPTION.md
-  diff      /Users/tener/code/teleport-pr-66556/PR_66556.diff
-  comments  /Users/tener/code/teleport-pr-66556/PR_COMMENTS.json
-  review    /Users/tener/code/teleport-pr-66556/PR_REVIEW.txt
-  render    /Users/tener/code/teleport-pr-66556/PR_RENDER.py
-  settings  /Users/tener/code/teleport-pr-66556/.claude/settings.local.json
-  cleanup   /Users/tener/code/teleport-pr-66556/WORKTREE_REMOVE.sh
-
-To start the review:
-
-cd /Users/tener/code/teleport-pr-66556 && claude "@PR_REVIEW.txt"
-```
 
 ## Configuration
 
