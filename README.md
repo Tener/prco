@@ -8,14 +8,28 @@ writes an HTML review report.
 
 ## Quick start
 
-Needs Python 3.11+, an authenticated [`gh`](https://cli.github.com/), and a
-local clone of each repo you review.
+Needs Python 3.11+, an authenticated [`gh`](https://cli.github.com/), a
+local clone of each repo you review, and the [review skills](#skills)
+installed for your agent.
 
     make install            # symlink prco.py as ~/.local/bin/prco (BINDIR=...)
     prco --edit-config      # list your repos
     prco <PR>               # then run the printed `cd ... && claude ...` line
 
 `make help` lists the other targets; `demo/record.sh` re-records the GIF.
+
+## Skills
+
+The review prompt invokes three skills, vendored in `skills/`:
+`software-risk-assessment`, `tracing-invariants` and `argument-decomposition`.
+prco does not install them. For Claude Code, link them into your user skills
+from the prco checkout:
+
+    mkdir -p ~/.claude/skills
+    ln -s "$PWD"/skills/* ~/.claude/skills/
+
+For other agents, put the three directories wherever the agent loads skills
+from. Without them the agent stops before reviewing and points here.
 
 ## Usage
 
