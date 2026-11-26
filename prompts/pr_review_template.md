@@ -42,6 +42,13 @@ terminal window you are running in, set it to
 
 If you do not, skip this silently; it is not a step.
 
+Then check that the skills this methodology invokes are available
+to you: /software-risk-assessment, /tracing-invariants and
+/argument-decomposition. If any is missing, stop before step 1:
+name the missing skills, say they ship in the `reasoning` plugin
+of the Tener/teleport-claude-skills marketplace, and wait for the
+user. Do not substitute your own approximation of a skill.
+
 Review methodology -- follow strictly, in order. Do not skip
 steps, do not reorder, do not peek ahead. Maintain a task list
 with one entry per numbered step and update its status as you go.
